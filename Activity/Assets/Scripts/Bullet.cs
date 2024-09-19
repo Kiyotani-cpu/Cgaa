@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float damage = 10f;
+    public GameObject impactEffect; // Reference to the impact effect prefab
 
     void OnCollisionEnter(Collision collision)
     {
@@ -15,8 +16,14 @@ public class Bullet : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
             }
+
+            // Instantiate the impact effect at the bullet's position and rotation
+            if (impactEffect != null)
+            {
+                Instantiate(impactEffect, transform.position, Quaternion.identity);
+            }
+
             Destroy(gameObject); // Destroy bullet on collision
         }
     }
 }
-
