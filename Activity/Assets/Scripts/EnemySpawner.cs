@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 2f, 5f); // Spawns an enemy every 5 seconds
+        InvokeRepeating("SpawnEnemy", 2f, 8f); // Spawns an enemy every 5 seconds
     }
 
     void SpawnEnemy()
